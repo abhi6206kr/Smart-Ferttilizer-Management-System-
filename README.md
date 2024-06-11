@@ -1,17 +1,17 @@
-# SUBSIDIZED FERTILIZER DISTRIBUTION MANAGEMENT SYSTEM (Web Application) - USER GUIDE
+# SUBSIDIZED  SMART FERTILIZER  MANAGEMENT SYSTEM (Web Application) - USER GUIDE
 
 # Initial Setup
 
-- Before using this system, user should paste the folder "Fertilizer_Subsidy" in to 'C:\xampp\htdocs' directory.
+- Before using this system, user should paste the folder "FDM" in to 'C:\xampp\htdocs' directory.
 - Run the sql script in 'db_e16_022_025_221_222.sql' file to create the database in MySQL server.
 - Open XAMPP server and start the service 'APACHE'.
-- Edit "connection.php" file in 'C:\xampp\htdocs\Fertilizer_Subsidy\includes' directory changing following attributes.
+- Edit "connection.php" file in 'C:\xampp\htdocs\FDM\includes' directory changing following attributes.
 
   1.  $servername = '<HOST_NAME(IP address of the host where MySQL server is situated)>'
   2.  $username = User name to access MySQL server
   3.  $password = Password to access MySQL server
 
-- Type as "http://localhost/Fertilizer_Subsidy/" as the URL in browser search bar to access the web application.
+- Type as "http://localhost/FDM/" as the URL in browser search bar to access the web application.
 
 # Instructions to use the Web Application
 
