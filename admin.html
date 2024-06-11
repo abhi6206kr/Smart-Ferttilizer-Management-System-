@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+</style>
+
+
+</head>
+<body>
+    <header>
+        <h1>Admin Page</h1>
+    </header>
+    <main>
+        <section id="issued-fertilizers">
+            <h2>Issued Fertilizers</h2>
+            <!-- Display issued fertilizers details here -->
+        </section>
+        <section id="farmers-details">
+            <h2>Farmers Details</h2>
+            <!-- Display farmers details here -->
+            <button id="delete-farmer">Delete Farmer</button>
+        </section>
+        <section id="stock-details">
+            <h2>Stock Details</h2>
+            <!-- Display stock details here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
