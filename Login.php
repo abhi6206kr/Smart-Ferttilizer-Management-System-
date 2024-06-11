@@ -1,39 +1,29 @@
 <?php require_once('includes/connection.php'); ?>
+
 <?php
-session_start();
+    if (isset($_POST['btnLogin'])) {
+        
+        $userID = $_POST['txtUName'];
+        $password = $_POST['txtPsw'];
 
-// Assuming $conn is your database connection
+        $hashed_password = sha1($password);
 
-if (isset($_POST['btnLogin'])) {
-    $userID = $_POST['txtUName'];
-    $password = $_POST['Password']; // Removed space in txtPsw
-    // $hashed_password = sha1($password); // Hashing the password
+        $query = "SELECT Password FROM AGRICULTURAL_OFFICER WHERE OfficerID = '{$userID}' LIMIT 1";
+        $result = mysqli_query($conn, $query);
 
-    $query = "SELECT Password FROM AGRICULTURAL_OFFICER WHERE OfficerID = '{$userID}' LIMIT 1";
-    $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) && mysqli_fetch_assoc($result)['Password'] == $password) {
+            $msg = "Login Successfully";
 
-    if ($result) {
-        if (mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            $stored_password = $user['Password'];
+            session_start();
+            $_SESSION['userID'] = $userID;
 
-            if ($stored_password == $stored_password ) {
-                $msg = "Login Successfully";
-                $_SESSION['userID'] = $userID;
-                header("Location: http://localhost/FDM/Farmers.php");
-                die;
-            } else {
-                $msg = "Invalid Password"; // Changed message to be more specific
-            }
+            header( "Location:http://localhost/FDM/Farmers.php" ); die;
         } else {
-            $msg = "Invalid Username"; // Changed message to be more specific
+            $msg = "Invalid Username or Password";
         }
-    } else {
-        $msg = "Query execution failed: " . mysqli_error($conn); // Error handling for query execution
-    }
-}
-?>
+    }   
 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -45,15 +35,13 @@ if (isset($_POST['btnLogin'])) {
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark bg-success fixed-top">
-		<a href="#" class="navbar-brand"><img src="img/IMG_2085.png" alt="" style="width: 50px;"></a>
-		<h5>Smart Fertilizer Management System</h5>
+		<a href="#" class="navbar-brand"><img src="img/IMG_2085.png" alt="" style="width: 100px;"></a>
 		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar_id"><span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse justify-content-center" id="navbar_id">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
 				<li class="nav-item"><a href="Login.php" class="nav-link active">LOGIN</a></li>
 				<li class="nav-item"><a href="about.html" class="nav-link">PHOTO GALLERY</a></li>
-				<li class="nav-item"><a href="Sign_In.php" class="nav-link">SIGNIN</a></li>
 		</ul>
 		</collapse>	
 	</nav><!-- class="navbar" -->
@@ -80,7 +68,6 @@ if (isset($_POST['btnLogin'])) {
 				<br>
 				<br>
 				<button type="submit" name="btnLogin" value="HTML" class="btn btn-success btn-lg">Log In</button>
-				<br>
 			</form>
 		</dic><!-- column -->
 	</div><!-- contain -->

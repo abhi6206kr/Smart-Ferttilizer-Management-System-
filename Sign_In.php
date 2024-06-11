@@ -12,35 +12,37 @@
 </head>
 <body>
 	<?php
-		include("header.php");
-		// include("Navigation-Bar.php");
+		include("Header.php");
+		include("Navigation-Bar.php");
 	?>
 	
 	<h1>Sign In Below To Create Your Account!!!</h1>
 	<br>
 	
-	<div style="background:url('./img/Background.jpg') no-repeat; background-size:cover;" class="text-center">
-		<form method="post" action="SaveReg.php">
-        <label>Officer ID:</label><br>
-        <input type="text" name="officer_id" required><br>
-
-        <label>Center ID:</label><br>
-        <input type="text" name="center_id" required><br>
-
-        <label>First Name:</label><br>
-        <input type="text" name="first_name" required><br>
-
-        <label>Last Name:</label><br>
-        <input type="text" name="last_name" required><br>
-
-        <label>Contact Number:</label><br>
-        <input type="tel" name="tel_no" required><br>
-
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br>
-
-        <input type="submit" value="Sign Up"><br><br>
-    </form>
+	<div style="background:url('./Background1.jpg') no-repeat; background-size:cover;" class="text-center">
+		<form method="post" action="../Backend/SaveReg.php">
+			<br>
+			<label>First Name</label>
+			<input type="text" placeholder="Enter Your First Name" name="txtFirst" required>
+			<br><br><br>
+			<label>Middle Name</label>
+			<input type="text" placeholder="Enter Your Middle Name" name="txtMiddle">
+			<br><br><br>
+			<label>Last Name</label>
+			<input type="text" placeholder="Enter Your Last Name" name="txtLast" required>
+			<br><br><br>
+			<label>Contact Number</label>
+			<input type="tel" placeholder="+91-9145XXXXXX" name="Contact" required>
+			<br><br><br>
+			<label>E-Mail</label>
+			<input type="email" placeholder="abc@gmail.com" name="EMail" id="EMail" required>
+			<br><br><br>
+			<label>Password</label>
+			<input type="password" placeholder="Enter Your Password" name="Pass" id="Pass" required>
+			<br><br><br>
+			<input type="submit" value="Sign In">
+			<br><br>
+		</form>
 	</div>
 	<br><br><br><br><br><br><br><br><br><br>
 	

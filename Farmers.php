@@ -105,21 +105,8 @@
 
 <?php include('includes/header.php'); ?>
     
-<style>
-        body {
-            background-image: url('/img/10.png.jpg');
+    <form action="Farmers.php" method = "post">
 
-        }
-        .form-background {
-            background-image: url('your-image-url.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
-    <form class="" action="Farmers.php" method = "post">
-    
         <h1>View Farmer Info</h1>
         <h4><?php echo $msgViewUser ?></h4><hr>
     

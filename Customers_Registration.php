@@ -61,6 +61,9 @@
 		</form>
 	</div>
 	<br>
-	<?php require_once('includes/footer.php'); ?>
+	
+	<?php
+		include("Footer.php");
+	?>
 </body>
 </html>
